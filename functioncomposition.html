@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>function composition</h1>
+    <script>
+const multiplyByTwo = (num) => num * 2;
+const addFive = (num) => num + 5;
+const subtractThree = (num) => num - 3;
+const composeFunctions = (value, functionsArray) => {
+    let result = value;
+    for (let i = 0; i < functionsArray.length; i++) {
+        result = functionsArray[i](result);  
+    }
+    return result;
+};
+const operations = [multiplyByTwo, addFive, subtractThree];
+const initialValue = 4;
+const finalResult = composeFunctions(initialValue, operations);
+console.log(finalResult); 
+
+    </script>
+</body>
+</html>
